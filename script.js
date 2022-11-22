@@ -129,7 +129,6 @@ const btnEqual = document.querySelector('button#equal');
 btnEqual.addEventListener('click', calcResult);
 
 document.addEventListener('keydown', (e) => {
-    console.log(e);
     switch (e.key) {
         case 'Delete':
         case 'Escape':
