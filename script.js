@@ -29,22 +29,22 @@ function operate(op, x, y) {
 
 function calcResult() {
     if (operation !== "zero-div" && operation !== null) {
-        if (visor[2].innerHTML.length === 0) {
-            visor[2].innerHTML = topOperand;
+        if (visor[2].textContent.length === 0) {
+            visor[2].textContent = topOperand;
         }
     }
-    bottomOperand = visor[2].innerHTML;
+    bottomOperand = visor[2].textContent;
     result = operate(operation, topOperand, bottomOperand);
     if (result !== undefined) {
         if (result === "zero division") {
-            visor[0].innerHTML = "I'm sorry, Dave. I'm afraid I can't do that."
+            visor[0].textContent = "I'm sorry, Dave. I'm afraid I can't do that."
             operation = "zero-div";
         } else {
-            visor[0].innerHTML = result;
+            visor[0].textContent = result;
             operation = "equal";
         }
-        visor[1].innerHTML = "";
-        visor[2].innerHTML = "";
+        visor[1].textContent = "";
+        visor[2].textContent = "";
         topOperand = null;
         bottomOperand = null;
     }
@@ -58,9 +58,9 @@ const maxLimit = 15; // it starts losing precision above 16 digits
 
 const clear = document.querySelector('button#clear');
 clear.addEventListener('click', () => {
-    visor[0].innerHTML = "";
-    visor[1].innerHTML = "";
-    visor[2].innerHTML = "";
+    visor[0].textContent = "";
+    visor[1].textContent = "";
+    visor[2].textContent = "";
     topOperand = null;
     operation = null;
     bottomOperand = null;
@@ -70,14 +70,14 @@ const btnNums = document.querySelectorAll('div#btn-num > button');
 btnNums.forEach((btnNum) => {
     btnNum.addEventListener('click', () => {
         if (operation === "equal" || operation === "zero-div") {
-            visor[0].innerHTML = btnNum.value;
+            visor[0].textContent = btnNum.value;
             operation = null;
         } else if (operation === null) {
-            if (visor[0].innerHTML.length < maxLimit) {
-                visor[0].innerHTML += btnNum.value;
+            if (visor[0].textContent.length < maxLimit) {
+                visor[0].textContent += btnNum.value;
             }
-        } else if (visor[2].innerHTML.length < maxLimit) {
-            visor[2].innerHTML += btnNum.value;
+        } else if (visor[2].textContent.length < maxLimit) {
+            visor[2].textContent += btnNum.value;
         }
     });
 });
@@ -85,14 +85,14 @@ btnNums.forEach((btnNum) => {
 const btnOps = document.querySelectorAll('div#btn-op > button');
 btnOps.forEach((btnOp) => {
     btnOp.addEventListener('click', () => {
-        if (operation === "zero-div" || visor[0].innerHTML.length === 0) {
-            visor[0].innerHTML = "0";
+        if (operation === "zero-div" || visor[0].textContent.length === 0) {
+            visor[0].textContent = "0";
         }
-        if (visor[2].innerHTML.length !== 0) {
+        if (visor[2].textContent.length !== 0) {
             calcResult();
         }
-        visor[1].innerHTML = btnOp.innerHTML;
-        topOperand = visor[0].innerHTML;
+        visor[1].textContent = btnOp.textContent;
+        topOperand = visor[0].textContent;
         operation = btnOp.value;
     });
 });
