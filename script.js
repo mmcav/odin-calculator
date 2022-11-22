@@ -56,8 +56,8 @@ let operation = null;
 let bottomOperand = null;
 const maxLimit = 16; // it starts losing precision above 16 digits
 
-const clear = document.querySelector('button#clear');
-clear.addEventListener('click', () => {
+const btnClear = document.querySelector('button#clear');
+btnClear.addEventListener('click', (e) => {
     visor[0].textContent = "";
     visor[1].textContent = "";
     visor[2].textContent = "";
@@ -127,3 +127,67 @@ btnOps.forEach((btnOp) => {
 
 const btnEqual = document.querySelector('button#equal');
 btnEqual.addEventListener('click', calcResult);
+
+document.addEventListener('keydown', (e) => {
+    console.log(e);
+    switch (e.key) {
+        case 'Delete':
+        case 'Escape':
+            btnClear.click();
+            break;
+        case '1':
+            btnNums[0].click();
+            break;
+        case '2':
+            btnNums[1].click();
+            break;
+        case '3':
+            btnNums[2].click();
+            break;
+        case '4':
+            btnNums[3].click();
+            break;
+        case '5':
+            btnNums[4].click();
+            break;
+        case '6':
+            btnNums[5].click();
+            break;
+        case '7':
+            btnNums[6].click();
+            break;
+        case '8':
+            btnNums[7].click();
+            break;
+        case '9':
+            btnNums[8].click();
+            break;
+        case '0':
+            btnNums[9].click();
+            break;
+        case ',':
+        case '.':
+            btnPoint.click();
+            break;
+        case 'Backspace':
+            btnBack.click();
+            break;
+        case '+':
+            btnOps[0].click();
+            break;
+        case '-':
+            btnOps[1].click();
+            break;
+        case '*':
+            btnOps[2].click();
+            break;
+        case '/':
+            e.preventDefault();
+            btnOps[3].click();
+            break;
+        case '=':
+        case 'Enter':
+            btnEqual.click();
+            break;
+    }
+});
