@@ -54,7 +54,7 @@ const visor = document.querySelectorAll('div#visor > p');
 let topOperand = null;
 let operation = null;
 let bottomOperand = null;
-const maxLimit = 15; // it starts losing precision above 16 digits
+const maxLimit = 16; // it starts losing precision above 16 digits
 
 const clear = document.querySelector('button#clear');
 clear.addEventListener('click', () => {
@@ -80,6 +80,34 @@ btnNums.forEach((btnNum) => {
             visor[2].textContent += btnNum.value;
         }
     });
+});
+
+const btnPoint = document.querySelector('button#point');
+btnPoint.addEventListener('click', () => {
+    if (operation === "equal" || operation === "zero-div") {
+        visor[0].textContent = '.';
+        operation = null;
+    } else if (operation === null) {
+        if (visor[0].textContent.indexOf('.') === -1) {
+            visor[0].textContent += '.';
+        }
+    } else if (visor[2].textContent.indexOf('.') === -1) {
+        visor[2].textContent += '.';
+    }
+});
+
+const btnBack = document.querySelector('button#backspace');
+btnBack.addEventListener('click', () => {
+    if (operation === "equal" || operation === "zero-div") {
+        visor[0].textContent = "";
+        operation = null;
+    } else if (operation === null) {
+        if (visor[0].textContent.length > 0) {
+            visor[0].textContent = visor[0].textContent.slice(0, -1);
+        }
+    } else if (visor[2].textContent.length > 0) {
+        visor[2].textContent = visor[2].textContent.slice(0, -1);
+    }
 });
 
 const btnOps = document.querySelectorAll('div#btn-op > button');
