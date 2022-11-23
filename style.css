@@ -73,8 +73,10 @@ button {
     font-family: 'Courier New', Courier, monospace;
     font-size: 24px;
     font-weight: bold;
-    height: 72px;
-    width: 72px;
+    height: 20vw;
+    max-height: 72px;
+    max-width: 72px;
+    width: 20vw;
 }
 
 button:hover {
@@ -88,7 +90,8 @@ button:active, button.active {
 
 button#clear, button#backspace {
     background-color: rgb(172, 0, 0);
-    width: 144px;
+    max-width: 148px;
+    width: 50vw;
 }
 
 button#clear:hover, button#backspace:hover {
