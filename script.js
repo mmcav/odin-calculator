@@ -61,7 +61,7 @@ btnClear.addEventListener('click', (e) => {
     bottomOperand = null;
 });
 
-const btnNums = document.querySelectorAll('div#btn-num > button');
+const btnNums = document.querySelectorAll('button[name=btn-num]');
 btnNums.forEach((btnNum) => {
     btnNum.addEventListener('click', () => {
         if (operation === "equal" || operation === "zero-div") {
@@ -105,7 +105,7 @@ btnBack.addEventListener('click', () => {
     }
 });
 
-const btnOps = document.querySelectorAll('div#btn-op > button');
+const btnOps = document.querySelectorAll('button[name=btn-op]');
 btnOps.forEach((btnOp) => {
     btnOp.addEventListener('click', () => {
         if (operation === "zero-div" || visor[0].textContent.length === 0) {
@@ -129,34 +129,34 @@ document.addEventListener('keydown', (e) => {
         case 'Escape':
             btnClear.click();
             break;
-        case '1':
+        case '0':
             btnNums[0].click();
             break;
-        case '2':
+        case '1':
             btnNums[1].click();
             break;
-        case '3':
+        case '2':
             btnNums[2].click();
             break;
-        case '4':
+        case '3':
             btnNums[3].click();
             break;
-        case '5':
+        case '4':
             btnNums[4].click();
             break;
-        case '6':
+        case '5':
             btnNums[5].click();
             break;
-        case '7':
+        case '6':
             btnNums[6].click();
             break;
-        case '8':
+        case '7':
             btnNums[7].click();
             break;
-        case '9':
+        case '8':
             btnNums[8].click();
             break;
-        case '0':
+        case '9':
             btnNums[9].click();
             break;
         case ',':
