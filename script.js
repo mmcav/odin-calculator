@@ -130,34 +130,34 @@ document.addEventListener('keydown', (e) => {
             btnClear.click();
             break;
         case '0':
-            btnNums[0].click();
+            btnNums[9].click();
             break;
         case '1':
-            btnNums[1].click();
-            break;
-        case '2':
-            btnNums[2].click();
-            break;
-        case '3':
-            btnNums[3].click();
-            break;
-        case '4':
-            btnNums[4].click();
-            break;
-        case '5':
-            btnNums[5].click();
-            break;
-        case '6':
             btnNums[6].click();
             break;
-        case '7':
+        case '2':
             btnNums[7].click();
             break;
-        case '8':
+        case '3':
             btnNums[8].click();
             break;
+        case '4':
+            btnNums[3].click();
+            break;
+        case '5':
+            btnNums[4].click();
+            break;
+        case '6':
+            btnNums[5].click();
+            break;
+        case '7':
+            btnNums[0].click();
+            break;
+        case '8':
+            btnNums[1].click();
+            break;
         case '9':
-            btnNums[9].click();
+            btnNums[2].click();
             break;
         case ',':
         case '.':
@@ -167,17 +167,17 @@ document.addEventListener('keydown', (e) => {
             btnBack.click();
             break;
         case '+':
-            btnOps[0].click();
+            btnOps[3].click();
             break;
         case '-':
-            btnOps[1].click();
+            btnOps[2].click();
             break;
         case '*':
-            btnOps[2].click();
+            btnOps[1].click();
             break;
         case '/':
             e.preventDefault();
-            btnOps[3].click();
+            btnOps[0].click();
             break;
         case '=':
         case 'Enter':

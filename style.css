@@ -21,7 +21,7 @@ h1 {
 }
 
 div#visor {
-    background-color: rgb(154, 194, 84);
+    background-color: rgb(182, 202, 143);
     border: 4px inset lightslategray;
     border-radius: 4px;
     height: 150px;
@@ -36,6 +36,35 @@ div#visor > p {
     text-align: right;
 }
 
+div#btn-container {
+    display: flex;
+    flex-direction: column;
+    margin: 32px 0;
+    max-width: 300px;
+    width: 80vw;
+}
+
+div#btn-container-head {
+    display: flex;
+    justify-content: space-between;
+}
+
+div#btn-container-body {
+    display: flex;
+    justify-content: center;
+}
+
+div#btn-container-nums {
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+}
+
+div#btn-container-ops {
+    display: flex;
+    flex-direction: column;
+}
+
 button {
     background-color: black;
     border: 3px outset lightgray;
@@ -44,11 +73,32 @@ button {
     font-family: 'Courier New', Courier, monospace;
     font-size: 24px;
     font-weight: bold;
-    height: 48px;
-    width: 48px;
+    height: 72px;
+    width: 72px;
+}
+
+button:hover {
+    background-color: rgb(26, 26, 26);
 }
 
 button:active {
     border: 3px inset gray;
     border-radius: 8px;
+}
+
+button#clear, button#backspace {
+    background-color: rgb(172, 0, 0);
+    width: 144px;
+}
+
+button#clear:hover, button#backspace:hover {
+    background-color: rgb(172, 46, 46);
+}
+
+button#equal {
+    background-color: rgb(0, 190, 127);
+}
+
+button#equal:hover {
+    background-color: rgb(52, 165, 127);
 }
