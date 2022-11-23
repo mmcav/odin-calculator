@@ -25,15 +25,13 @@ function operate(op, x, y) {
 }
 
 function calcResult() {
-    if (operation !== "zero-div" && operation !== null) {
+    if (operation !== "equal" && operation !== "zero-div" && operation !== null) {
         if (visor[2].textContent.length === 0) {
             visor[2].textContent = topOperand;
         }
-    }
-    bottomOperand = visor[2].textContent;
-    result = operate(operation, topOperand, bottomOperand);
-    if (result !== undefined) {
-        if (result === Infinity || isNaN(result)) {
+        bottomOperand = visor[2].textContent;
+        result = operate(operation, topOperand, bottomOperand);
+        if (!isFinite(result)) {
             visor[0].textContent = "I'm sorry, Dave. I'm afraid I can't do that."
             operation = "zero-div";
         } else {
