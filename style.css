@@ -81,7 +81,7 @@ button:hover {
     background-color: rgb(26, 26, 26);
 }
 
-button:active {
+button:active, button.active {
     border: 3px inset gray;
     border-radius: 8px;
 }

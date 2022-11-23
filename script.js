@@ -128,60 +128,140 @@ document.addEventListener('keydown', (e) => {
         case 'Delete':
         case 'Escape':
             btnClear.click();
+            btnClear.classList.add('active');
             break;
         case '0':
             btnNums[9].click();
+            btnNums[9].classList.add('active');
             break;
         case '1':
             btnNums[6].click();
+            btnNums[6].classList.add('active');
             break;
         case '2':
             btnNums[7].click();
+            btnNums[7].classList.add('active');
             break;
         case '3':
             btnNums[8].click();
+            btnNums[8].classList.add('active');
             break;
         case '4':
             btnNums[3].click();
+            btnNums[3].classList.add('active');
             break;
         case '5':
             btnNums[4].click();
+            btnNums[4].classList.add('active');
             break;
         case '6':
             btnNums[5].click();
+            btnNums[5].classList.add('active');
             break;
         case '7':
             btnNums[0].click();
+            btnNums[0].classList.add('active');
             break;
         case '8':
             btnNums[1].click();
+            btnNums[1].classList.add('active');
             break;
         case '9':
             btnNums[2].click();
+            btnNums[2].classList.add('active');
             break;
         case ',':
         case '.':
             btnPoint.click();
+            btnPoint.classList.add('active');
             break;
         case 'Backspace':
             btnBack.click();
+            btnBack.classList.add('active');
             break;
         case '+':
             btnOps[3].click();
+            btnOps[3].classList.add('active');
             break;
         case '-':
             btnOps[2].click();
+            btnOps[2].classList.add('active');
             break;
         case '*':
             btnOps[1].click();
+            btnOps[1].classList.add('active');
             break;
         case '/':
             e.preventDefault();
             btnOps[0].click();
+            btnOps[0].classList.add('active');
             break;
         case '=':
         case 'Enter':
             btnEqual.click();
+            btnEqual.classList.add('active');
+            break;
+    }
+});
+
+document.addEventListener('keyup', (e) => {
+    switch (e.key) {
+        case 'Delete':
+        case 'Escape':
+            btnClear.classList.remove('active');
+            break;
+        case '0':
+            btnNums[9].classList.remove('active');
+            break;
+        case '1':
+            btnNums[6].classList.remove('active');
+            break;
+        case '2':
+            btnNums[7].classList.remove('active');
+            break;
+        case '3':
+            btnNums[8].classList.remove('active');
+            break;
+        case '4':
+            btnNums[3].classList.remove('active');
+            break;
+        case '5':
+            btnNums[4].classList.remove('active');
+            break;
+        case '6':
+            btnNums[5].classList.remove('active');
+            break;
+        case '7':
+            btnNums[0].classList.remove('active');
+            break;
+        case '8':
+            btnNums[1].classList.remove('active');
+            break;
+        case '9':
+            btnNums[2].classList.remove('active');
+            break;
+        case ',':
+        case '.':
+            btnPoint.classList.remove('active');
+            break;
+        case 'Backspace':
+            btnBack.classList.remove('active');
+            break;
+        case '+':
+            btnOps[3].classList.remove('active');
+            break;
+        case '-':
+            btnOps[2].classList.remove('active');
+            break;
+        case '*':
+            btnOps[1].classList.remove('active');
+            break;
+        case '/':
+            btnOps[0].classList.remove('active');
+            break;
+        case '=':
+        case 'Enter':
+            btnEqual.classList.remove('active');
             break;
     }
 });
