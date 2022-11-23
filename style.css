@@ -1,3 +1,54 @@
 body {
+    display: flex;
+    justify-content: center;
+}
+
+div#container {
+    align-items: center;
+    background-color: lightslategray;
+    border: 2px solid black;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    width: 90vw;
+}
+
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 36px;
     text-align: center;
+}
+
+div#visor {
+    background-color: rgb(154, 194, 84);
+    border: 4px inset lightslategray;
+    border-radius: 4px;
+    height: 150px;
+    max-width: 400px;
+    width: 80vw;
+}
+
+div#visor > p {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 28px;
+    margin: 8px;
+    text-align: right;
+}
+
+button {
+    background-color: black;
+    border: 3px outset lightgray;
+    border-radius: 8px;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
+    font-weight: bold;
+    height: 48px;
+    width: 48px;
+}
+
+button:active {
+    border: 3px inset gray;
+    border-radius: 8px;
 }
