@@ -11,9 +11,6 @@ function multiply(x, y) {
 }
 
 function divide(x, y) {
-    if (y === 0) {
-        return 'zero division'
-    }
     return x / y;
 }
 
@@ -36,7 +33,7 @@ function calcResult() {
     bottomOperand = visor[2].textContent;
     result = operate(operation, topOperand, bottomOperand);
     if (result !== undefined) {
-        if (result === "zero division") {
+        if (result === Infinity || isNaN(result)) {
             visor[0].textContent = "I'm sorry, Dave. I'm afraid I can't do that."
             operation = "zero-div";
         } else {
